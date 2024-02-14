@@ -17,7 +17,7 @@ payload = json.dumps({
     "recipes": [
       "urn:li:digitalmediaRecipe:feedshare-image"
     ],
-    "owner": "urn:li:person:"+ URN_USER,
+    "owner": "urn:li:person:" + URN_USER,
     "serviceRelationships": [
       {
         "relationshipType": "OWNER",
@@ -37,5 +37,6 @@ if response.status_code == 200:
     print('Register successfully created! '+ response.text),
     with open('log_assets.txt', 'a') as file:
         file.write('\n' + response.text)
+        file.flush()
 else:
     print(f'Register failed with status code {response.status_code}: {response.text}')

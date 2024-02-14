@@ -45,14 +45,14 @@ payload = json.dumps({
   "specificContent": {
     "com.linkedin.ugc.ShareContent": {
       "shareCommentary": {
-        "text": "Gráfica generada en R con datos de la API del Banco de México y publicada por la API de Linkedin usando Python #API #R #Banxico #Python #AWS #EC2"
+        "text": "Gráfica generada en R con datos de la API del Banco de México o del INEGI y publicada por la API de Linkedin usando Python #API #R #Banxico #Python #AWS #EC2"
       },
       "shareMediaCategory": "IMAGE",
       "media": [
         {
           "status": "READY",
           "description": {
-            "text": "Indicadores de ocupación y remuneraciones en México"
+            "text": "Fuente: Banxico "
           },
           "media": last_digitalmedia_asset,
           "title": {
@@ -78,5 +78,6 @@ if response.status_code == 201:
     print('Post successfully created! '+ response.text),
     with open('log_posts.txt', 'a') as file:
         file.write(f'{formatted_datetime}' + response.text + '\n')
+        file.flush()
 else:
     print(f'Upload failed with status code {response.status_code}: {response.text}')

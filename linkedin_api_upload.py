@@ -54,5 +54,6 @@ if response.status_code == 201:
     print('Upload successfully created! '+ response.text),
     with open('log_uploads.txt', 'a') as file:
         file.write(f'\n {formatted_datetime} {response.text}')
+        file.flush()
 else:
     print(f'Upload failed with status code {response.status_code}: {response.text}')

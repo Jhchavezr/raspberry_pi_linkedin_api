@@ -26,7 +26,8 @@ lastDate<- max(df$SL11297.date)
 g <- ggplot(df,aes(x=SL11297.date, y=SL11297.value)) +
     geom_point()+
     geom_line(aes(
-        color=as.character(year)
+        color=as.character(yeaRUN Rscript -e "install.packages(c('ggplot2', 'dplyr', 'tidyr'), repos='https://cloud.r-project.org/')"
+r)
     )) +
     labs(color="Año", y="Salario mínimo real en MXN", x= "Mes y año",
     title= "Salario mínimo real últimos dos años",
