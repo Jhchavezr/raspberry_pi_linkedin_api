@@ -4,7 +4,7 @@ This repository will help you make post image shares in your linkedin profile.
 Everything is done via the shell scripts (you should add them to your crontab and schedule each one at one day of the week or as preferred)
 
 ## Requirements
-- A Linkedin API Access Token and URN (you can get them [here](https://learn.microsoft.com/en-us/linkedin/consumer/))..
+- A Linkedin API Access Token and URN (you can get them [here](https://learn.microsoft.com/en-us/linkedin/consumer/)).
 - An INEGI token, you can get it [here](https://www.inegi.org.mx/app/desarrolladores/generatoken/Usuarios/token_Verify).
 - A Banxico token, you can get it [overhere](https://www.banxico.org.mx/SieAPIRest/service/v1/token).
 
