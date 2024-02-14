@@ -19,4 +19,8 @@ Runs a Python script that uploads the image at the supplied url.
 ## Step 4
 Runs a Python script that posts a share in your linkedin profile.
 
+## Results
+You'll have a plot with some text posted in your linkedin profile. Like this one:
+![image](https://github.com/Jhchavezr/raspberry_pi_linkedin_api/assets/69514727/1f7b24a8-d03c-4a4d-b703-68f409943161)
+
 
