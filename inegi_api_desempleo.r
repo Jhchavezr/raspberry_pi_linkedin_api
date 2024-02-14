@@ -7,8 +7,11 @@ library(dplyr)
 library("siebanxicor")
 library(lubridate)
 
+inegitoken <- Sys.getenv("INEGI_TOKEN")
+
+
 #Llamado al API
-url <-"https://www.inegi.org.mx/app/api/indicadores/desarrolladores/jsonxml/INDICATOR/444603,444911/es/0700/false/BIE/2.0/e1f7dd06-09d5-7e19-1a9b-3f9fcf206088?type=json"
+url <-paste0("https://www.inegi.org.mx/app/api/indicadores/desarrolladores/jsonxml/INDICATOR/444603,444911/es/0700/false/BIE/2.0/", inegitoken, "?type=json")
 respuesta<-GET(url)
 cont <- content(respuesta,"parsed")
 series <- cont$Series

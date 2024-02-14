@@ -4,15 +4,16 @@ library(ggplot2)
 library(dplyr)
 library(lubridate)
 
-setToken("b4f43d25699386841f651eebd171f833274d6ea0f136b54d033e30579ac7c02c")
+banxicotoken <- Sys.getenv("BANXICO_TOKEN")
+setToken(banxicotoken)
 
 oneyear <- Sys.Date()-366
 tenyear <- Sys.Date()-3660
 twoyear <- Sys.Date()-366*2
 idSeries <- c("SL11297")
+
 series <- getSeriesData(idSeries)
 
-str(tenyear)
 df <- as.data.frame(series) %>%
     dplyr::filter(
         SL11297.date >= twoyear
@@ -20,14 +21,10 @@ df <- as.data.frame(series) %>%
     mutate(
         year = year(SL11297.date)
     )
-
-hora_creacion <- as.character(Sys.time())
-lastDate<- max(df$SL11297.date)
-g <- ggplot(df,aes(x=SL11297.date, y=SL11297.value)) +
+Set11297.date, y=SL11297.value)) +
     geom_point()+
     geom_line(aes(
-        color=as.character(yeaRUN Rscript -e "install.packages(c('ggplot2', 'dplyr', 'tidyr'), repos='https://cloud.r-project.org/')"
-r)
+        color=as.character(year)
     )) +
     labs(color="Año", y="Salario mínimo real en MXN", x= "Mes y año",
     title= "Salario mínimo real últimos dos años",
@@ -45,3 +42,4 @@ png_name <- paste0("~/linkedin_api/plots/plot_", Sys.Date(),".png")
 png(png_name, width=600)
 g
 dev.off()
+

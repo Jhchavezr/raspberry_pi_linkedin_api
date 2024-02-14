@@ -17,7 +17,7 @@ headers = {
 }
 
 post_body = {
-    'author': 'urn:li:person:' + URN_USER,
+    'author': 'urn:linegitokeni:person:' + URN_USER,
     'lifecycleState': 'PUBLISHED',
     'specificContent': {
         'com.linkedin.ugc.ShareContent': {

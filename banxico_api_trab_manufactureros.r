@@ -6,7 +6,9 @@ library(lubridate)
 library(tidyr)
 Sys.setenv(LANG = "es")
 
-setToken("b4f43d25699386841f651eebd171f833274d6ea0f136b54d033e30579ac7c02c")
+banxicotoken <- Sys.getenv("BANXICO_TOKEN")
+
+setToken(banxicotoken)
 
 oneyear <- Sys.Date()-366
 tenyear <- Sys.Date()-3660

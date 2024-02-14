@@ -4,3 +4,5 @@ read_log_assets.py
 linkedin_share_api.R
 .Rproj.user
 old_versions
+.Renviron
+linkedin_api_article.py
