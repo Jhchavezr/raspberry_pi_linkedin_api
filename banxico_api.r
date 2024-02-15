@@ -21,7 +21,13 @@ df <- as.data.frame(series) %>%
     mutate(
         year = year(SL11297.date)
     )
-Set11297.date, y=SL11297.value)) +
+
+
+hora_creacion <- as.character(Sys.time())
+
+lastDate<- max(df$SL11297.date)
+
+g <- ggplot(df, aes(x=SL11297.date, y=SL11297.value)) +
     geom_point()+
     geom_line(aes(
         color=as.character(year)
