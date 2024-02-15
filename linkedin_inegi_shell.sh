@@ -1,5 +1,5 @@
 # RUN R SCRIPT
-cd ~/linkedin_api
+cd ~/raspberry_pi_linkedin_api
 Rscript inegi_api_desempleo.r
 echo "R SCRIPT DONE"
 
@@ -12,11 +12,11 @@ echo "Python asset registrated"
 
 sleep 30
 #Run Upload plot in python
-python3 ~/linkedin_api/linkedin_api_upload.py
+python3 ~/raspberry_pi_linkedin_api/linkedin_api_upload.py
 echo "Python upload done"
 
 #Run IMAGE SHARE POST Linkedin API.
-python3 ~/linkedin_api/linkedin_api_image_post.py
+python3 ~/raspberry_pi_linkedin_api/linkedin_api_image_post.py
 
 echo "Linkedin Share published"
 # ECHO

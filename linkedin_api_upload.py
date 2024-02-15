@@ -11,12 +11,14 @@ ACCESS_TOKEN=os.getenv('ACCESS_TOKEN')
 URN_USER=os.getenv('URN_USER')
 INEGI_TOKEN=os.getenv('INEGI_TOKEN')
 current_datetime = datetime.now()
+current_directory = os.getcwd()
 formatted_datetime = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
 
 today_date = datetime.today()
 # Convert today's date to the format used in the file names
 today_date_str = current_datetime.strftime("%Y-%m-%d")
-plotfile = f"/home/ximena/linkedin_api/plots/plot_{today_date_str}.png"
+plotfile = f"{current_directory}/plots/plot_{today_date_str}.png"
+print(plotfile + current_directory)
 image = open(plotfile,"rb").read()
 
 

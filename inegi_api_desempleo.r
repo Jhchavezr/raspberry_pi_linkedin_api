@@ -60,7 +60,7 @@ g <- ggplot(df,aes(x=date2, y=desocupacion/100)) +
            color = "gray", size = 6)
 
 g
-png_name <- paste0("~/linkedin_api/plots/plot_", Sys.Date(),".png")
+png_name <- paste0("~/raspberry_pi_linkedin_api/plots/plot_", Sys.Date(),".png")
 
 png(png_name, width=600)
 g

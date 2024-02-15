@@ -37,7 +37,7 @@ Set11297.date, y=SL11297.value)) +
            color = "gray", size = 6)
 
 
-png_name <- paste0("~/linkedin_api/plots/plot_", Sys.Date(),".png")
+png_name <- paste0("~/raspberry_pi_linkedin_api/plots/plot_", Sys.Date(),".png")
 
 png(png_name, width=600)
 g
