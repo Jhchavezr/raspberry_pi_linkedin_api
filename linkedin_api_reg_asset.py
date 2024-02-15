@@ -33,7 +33,7 @@ headers = {
 
 response = requests.request("POST", url, headers=headers, data=payload)
 
-if response.status_craspberry_pi_ode == 200:
+if response.status_code == 200:
     print('Register successfully created! '+ response.text),
     with open('log_assets.txt', 'a') as file:
         file.write('\n' + response.text)
