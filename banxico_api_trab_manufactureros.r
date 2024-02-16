@@ -4,6 +4,8 @@ library(ggplot2)
 library(dplyr)
 library(lubridate)
 library(tidyr)
+library(Cairo)
+
 Sys.setenv(LANG = "es")
 
 banxicotoken <- Sys.getenv("BANXICO_TOKEN")
@@ -80,6 +82,6 @@ g <- ggplot(df,aes(x=date,
 g
 png_name <- paste0("~/raspberry_pi_linkedin_api/plots/plot_", Sys.Date(),".png")
 
-png(png_name, width=700)
+CairoPNG(png_name, width=700)
 g
 dev.off()

@@ -6,6 +6,7 @@ library(tidyr)
 library(dplyr)
 library("siebanxicor")
 library(lubridate)
+library(Cairo)
 
 inegitoken <- Sys.getenv("INEGI_TOKEN")
 
@@ -59,9 +60,9 @@ g <- ggplot(df,aes(x=date2, y=desocupacion/100)) +
            label = paste("Creado el ", Sys.time()), 
            color = "gray", size = 6)
 
-g
+
 png_name <- paste0("~/raspberry_pi_linkedin_api/plots/plot_", Sys.Date(),".png")
 
-png(png_name, width=600)
+CairoPNG(png_name, width=600)
 g
 dev.off()

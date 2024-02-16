@@ -4,11 +4,11 @@ Rscript banxico_api.r
 echo "R SCRIPT DONE"
 
 #Activate virtual environment
-#source ~/linkedin_api/myenv/bin/activate
-#echo "Source activated"
+source ~/raspberry_pi_linkedin_api/.venv/bin/activate
+echo "Source activated"
 
 #Run asset registration in Linkedin API
-#python3 ~/linkedin_api/linkedin_api_reg_asset.py
+python3 ~/raspberry_pi_linkedin_api/linkedin_api_reg_asset.py
 echo "Python asset registrated"
 
 sleep 30
