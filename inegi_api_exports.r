@@ -39,30 +39,28 @@ df <- df %>%
   ) %>%
   filter(
     date2 >= tenyear
-  )
-
+  ) %>%
+  pivot_longer(names_to="categoria", cols = c("value_nac", "value_imp"), values_to = "values" )
 
 hora_creacion <- as.character(Sys.time())
 lastDate <- max(df$date2)
 
-g <- ggplot(df, aes(x = date2)) +
-  geom_line(aes(y = value_nac
-     #color=as.character(year(date2))
-  ),
-  color = "blue") +
-  geom_line(aes(
-    y = value_imp
-     #color=as.character(year(date2))
-  ), color = "red" ) +
+g <- ggplot(df, aes(x = date2,
+color = categoria)) +
+  geom_line(aes(y = values)) +
   labs(color="Consumo", y="Índice de consumo (2018 = 100)", x = "Año y mes",
        title= "Incremento del consumo de bienes nacionales e importados",
        subtitle="Fuente: API Banco de Información Económica, INEGI.") +
   scale_x_date(date_breaks = "3 months",date_labels = "%Y-%m") +
   theme(text=element_text(size=16,family = "Times"),
-        axis.text.x = element_text(angle = 45, hjust = 1))  +
-  scale_y_continuous(n.breaks=15) +
-  annotate("text",x=lastDate, y = min(df$value_imp), hjust = 1, vjust = 0, 
-           label = paste("Creado el ", Sys.time()), 
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "top")  +
+  scale_y_continuous(n.breaks = 15) +
+  scale_color_manual(values = c("value_imp" = "indianred", "value_nac" = "royalblue3"),
+  labels = c("value_imp" = "Importado",
+  "value_nac"= "Nacional")) +
+  annotate("text",x = lastDate, y = min(df$values), hjust = 1, vjust = 0, 
+           label = paste("Creado el ", Sys.time()),
            color = "gray", size = 6)
 g
 png_name <- paste0("~/raspberry_pi_linkedin_api/plots/plot_", Sys.Date(),".png")
