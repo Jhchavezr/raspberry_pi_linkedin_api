@@ -1,6 +1,6 @@
 # RUN R SCRIPT
 cd ~/raspberry_pi_linkedin_api
-Rscript inegi_api_desempleo.r
+Rscript inegi_api_exports.r
 echo "R SCRIPT DONE"
 
 #Activate virtual environment

@@ -45,7 +45,7 @@ payload = json.dumps({
   "specificContent": {
     "com.linkedin.ugc.ShareContent": {
       "shareCommentary": {
-        "text": "Gráfica generada en R con datos de la API del Banco de México o del INEGI y publicada por la API de Linkedin usando Python #API #R #Banxico #Python #AWS #EC2"
+        "text": "Gráfica generada en R con datos de la API del Banco de México o del INEGI y publicada por la API de Linkedin usando Python #API #R #Banxico #INEGI #Python #AWS #EC2 #Raspberry #Ubuntu #Linkedin"
       },
       "shareMediaCategory": "IMAGE",
       "media": [
